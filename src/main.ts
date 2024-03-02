@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { config } from 'dotenv';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
+import { SOUNDSTAGE_PACKAGE_NAME } from 'common/proto/soundstage/soundstage';
 
 config();
 
@@ -17,7 +18,7 @@ async function bootstrap() {
           __dirname,
           '../common/proto/soundstage/soundstage.proto',
         ),
-        package: 'soundstage',
+        package: SOUNDSTAGE_PACKAGE_NAME,
         url: `localhost:${port}`,
       },
     },

@@ -3,6 +3,7 @@ import { GrpcMethod } from '@nestjs/microservices';
 import { SoundstageService } from './soundstage.service';
 import {
   CreateSoundStageDto,
+  SOUND_STAGE_SERVICE_NAME,
   SoundStageServiceController,
 } from 'common/proto/soundstage/soundstage';
 
@@ -10,7 +11,7 @@ import {
 export class SoundstageController implements SoundStageServiceController {
   constructor(private readonly soundstageService: SoundstageService) {}
 
-  @GrpcMethod('SoundStageService', 'createSoundstage')
+  @GrpcMethod(SOUND_STAGE_SERVICE_NAME, 'createSoundStageUser')
   createSoundStageUser(createSoundStageDto: CreateSoundStageDto) {
     return this.soundstageService.createSoundStageUser(createSoundStageDto);
   }
