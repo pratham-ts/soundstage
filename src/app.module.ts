@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { SoundstageModule } from './soundstage/soundstage.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import ormConfig from 'common/config/ormconfig';
 import { tblUsers } from './soundstage/entities/TblUsers';
+import ormConfig from 'common/config/ormconfig';
 
 const ENV = process.env.NODE_ENV;
 
